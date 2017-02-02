@@ -21,17 +21,42 @@ $(document).ready(function() {
       }
     };
 
-    var clickCounter = 1;
-    $("button#player1").click(function() {
-      $("#" + clickCounter + "top").css("background-color", "blue");
-      clickCounter++
-    });
+    // var clickCounter = 1;
+    // $("button#player1").click(function() {
+    //   $("#" + clickCounter + "top").css("background-color", "blue");
+    //   clickCounter++
+    //   var revertColor = clickCounter - 1;
+    //   if (revertColor > 1) {
+    //     $("#" + revertColor + "top").css("background-color", "red");
+    //   };
+    // });
 
+    var clickCounter = 1;
     var clickCounter2 = 1;
-    $("button#player2").click(function() {
-      $("#" + clickCounter2 + "bottom").css("background-color", "red");
-      clickCounter2++
-    });
+    $(document).keyup(function(event) {
+      if(event.which == 65) {
+        $("#" + clickCounter + "top").css("background-color", "blue");
+        clickCounter++
+      }
+      else if (event.which == 76) {
+        $("#" + clickCounter2 + "bottom").css("background-color", "blue");
+        clickCounter2++
+      }
+    })
+
+
+    // $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
+
+
+
+
+    // var clickCounter2 = 1;
+    // $(document).keyup(function(event) {
+    //   if (event.which == 76) {
+    //     $("#" + clickCounter2 + "bottom").css("background-color", "blue");
+    //   }
+    //   clickCounter2++
+    // });
 
 
 
