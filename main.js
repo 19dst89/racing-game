@@ -47,7 +47,7 @@ $(document).ready(function() {
     if ($("#6top").hasClass("end-slot")) {
       alert("Player 1 has won");
     }
-    else if $("#6bottom").hasClass("end-slot") {
+    else if ($("#6bottom").hasClass("end-slot")) {
       alert("Player 2 has won");
     }
 
