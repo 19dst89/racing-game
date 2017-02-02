@@ -2,17 +2,17 @@ console.log("Javascript link is working");
 
 $(document).ready(function() {
   gBoard = [["<div id='1top' class='top col-md-2'>TOP 1</div>",
-    "<div id='2top' class='top col-md-2'>TOP 2</div>",
-    "<div id='3top' class='top col-md-2'>TOP 3</div>",
-    "<div id='4top' class='top col-md-2'>TOP 4</div>",
-    "<div id='5top' class='top col-md-2'>TOP 5</div>",
-    "<div id='6top' class='top col-md-2'>TOP 6</div>"],
-    ["<div id='1bottom' class='bottom col-md-2'>Bottom 1</div>",
-    "<div id='2bottom' class='bottom col-md-2'>Bottom 2</div>",
-    "<div id='3bottom' class='bottom col-md-2'>Bottom 3</div>",
-    "<div id='4bottom' class='bottom col-md-2'>Bottom 4</div>",
-    "<div id='5bottom' class='bottom col-md-2'>Bottom 5</div>",
-    "<div id='6bottom' class='bottom col-md-2'>Bottom 6</div>"]];
+    "<div id='2top' class='top starting col-md-2'>TOP 2</div>",
+    "<div id='3top' class='top starting col-md-2'>TOP 3</div>",
+    "<div id='4top' class='top starting col-md-2'>TOP 4</div>",
+    "<div id='5top' class='top starting col-md-2'>TOP 5</div>",
+    "<div id='6top' class='top starting col-md-2'>TOP 6</div>"],
+    ["<div id='1bottom' class='bottom starting col-md-2'>Bottom 1</div>",
+    "<div id='2bottom' class='bottom starting col-md-2'>Bottom 2</div>",
+    "<div id='3bottom' class='bottom starting col-md-2'>Bottom 3</div>",
+    "<div id='4bottom' class='bottom starting col-md-2'>Bottom 4</div>",
+    "<div id='5bottom' class='bottom starting col-md-2'>Bottom 5</div>",
+    "<div id='6bottom' class='bottom starting col-md-2'>Bottom 6</div>"]];
 
 
     for (var i = 0; i < gBoard.length; i++) {
@@ -35,14 +35,21 @@ $(document).ready(function() {
     var clickCounter2 = 1;
     $(document).keyup(function(event) {
       if(event.which == 65) {
-        $("#" + clickCounter + "top").css("background-color", "blue");
+        $("#" + clickCounter + "top").addClass("end-slot").removeClass("starting");
         clickCounter++
       }
       else if (event.which == 76) {
-        $("#" + clickCounter2 + "bottom").css("background-color", "blue");
+        $("#" + clickCounter2 + "bottom").addClass("end-slot").removeClass("starting");
         clickCounter2++
       }
     })
+
+    if ($("#6top").hasClass("end-slot")) {
+      alert("Player 1 has won");
+    }
+    else if $("#6bottom").hasClass("end-slot") {
+      alert("Player 2 has won");
+    }
 
 
     // $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
