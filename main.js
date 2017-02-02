@@ -44,6 +44,8 @@ $(document).ready(function() {
       }
     })
 
+
+    // not sure why this isnt working.
     if ($("#6top").hasClass("end-slot")) {
       alert("Player 1 has won");
     }
